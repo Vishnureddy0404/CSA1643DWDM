@@ -1,0 +1,8 @@
+person<-c("yes","no","yes")
+count<-table(person)
+print(count)
+if (count["no"]>count["yes"]){
+  cat("less veg")
+ } else{
+   cat("there are more vegetarians")
+}
