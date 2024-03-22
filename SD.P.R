@@ -1,0 +1,6 @@
+data1 <- c(10, 15, 20, 25, 30)
+data2 <- c(5, 12, 18, 24, 35)
+sd(data1)
+sd(data2)
+cat("sd:",sd(data1))
+cat("sd:",sd(data2))
