@@ -1,0 +1,6 @@
+data1 <- c(10, 15, 20, 25, 30)
+data2 <- c(5, 12, 18, 24, 35)
+range_data1 <- range(data1)
+range_data2 <- range(data2)
+cat("Range of data1:", range_data1,"\n")
+cat("Range of data2:", range_data2,"\n")

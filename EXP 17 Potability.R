@@ -1,0 +1,13 @@
+data <- read.csv("D:/phd/Dataset/water_potability.csv")
+str(data)
+data$Potability <- as.factor(data$Potability)
+data$Potability <- as.numeric(data$Potability)
+data <- data[is.finite(data$Hardness), ]
+data$Hardness[is.na(data$Hardness)] <- mean(data$Hardness, na.rm = TRUE)
+data$Potability[is.na(data$Potability)] <- mean(data$Potability, na.rm = TRUE)
+plot(data$Hardness, data$Potability, xlab = "Hardness", ylab = "Potability", main = "Scatter plot of Potability vs. Hardness")
+model <- lm(Potability ~ Hardness, data = data)
+abline(model, col = "red")
+predict_value <- predict(model, newdata = data.frame(Hardness = 88))
+cat("Predicted Potability for Hardness=88:", predict_value, "\n")
+summary(model)
